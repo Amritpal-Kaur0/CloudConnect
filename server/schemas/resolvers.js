@@ -97,6 +97,24 @@ const resolvers = {
         throw new Error("Failed to create user.");
       }
     },
+
+    
+     // Update a user
+ updateUser: async (_, { _id, username, email }) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      _id,
+      { username, email },
+      { runValidators: true, new: true }
+    );
+    if (!updatedUser) {
+      throw new Error('User not found.');
+    }
+    return updatedUser;
+  } catch (err) {
+    throw new Error('Failed to update user.');
+  }
+},
   },
 };
 
