@@ -4,9 +4,9 @@ export default function Homepage() {
   return (
     <div class="container">
 
-    <div class="container login d-flex justify-content-center">
+    <div class="container  login d-flex justify-content-center">
       <form>
-      <h2>LOGIN</h2>
+      <h2 className='text-2xl'>LOGIN</h2>
 
         <div class="mb-3">
 
@@ -19,7 +19,7 @@ export default function Homepage() {
 
         </div>
 
-      <button type="submit" class="btn btn-primary">SUBMIT</button>
+      <button type="submit" className="btn px-4 m-3 btn-primary">SUBMIT</button>
 
       </form>
 
