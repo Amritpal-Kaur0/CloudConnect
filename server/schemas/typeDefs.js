@@ -49,6 +49,11 @@ type Query {
   getSingleThought(_id:ID!):Thought!
  
 }
+# Define the Mutation type
+type Mutation {
+  # Create a new user
+  createUser(username: String!, email: String!, password:String!): User!
+}
 
 `
 
