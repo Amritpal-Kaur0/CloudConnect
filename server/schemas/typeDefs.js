@@ -56,6 +56,9 @@ type Mutation {
 
   # update user 
   updateUser(_id: ID!, username: String!, email: String!): User!
+
+  # Add a friend to a user
+  addFriend(_id: ID!, friendId: ID!): User!
 }
 
 `

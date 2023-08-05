@@ -98,7 +98,7 @@ const resolvers = {
       }
     },
 
-    
+
      // Update a user
  updateUser: async (_, { _id, username, email }) => {
   try {
@@ -113,6 +113,18 @@ const resolvers = {
     return updatedUser;
   } catch (err) {
     throw new Error('Failed to update user.');
+  }
+},
+addFriend: async (_, { _id, friendId }) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      _id,
+      { $push: { friends: friendId } },
+      { new: true }
+    );
+    return updatedUser;
+  } catch (err) {
+    throw new Error('Failed to add friend.');
   }
 },
   },
