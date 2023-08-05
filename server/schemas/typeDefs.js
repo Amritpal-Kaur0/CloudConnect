@@ -35,11 +35,17 @@ type User {
 
 # Define the Query type
 type Query {
-  # Fetch a single user by their ID
+  # get all Users
   getUsers: [User]
+  
+  # Fetch a single user by their ID
   singleUser(_id:ID!):User
+  
   # Fetch all thoughts
   getThoughts: [Thought]!
+  
+  
+  # Fetch a single THougt by their ID
   getSingleThought(_id:ID!):Thought!
  
 }

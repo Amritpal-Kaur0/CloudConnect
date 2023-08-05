@@ -14,6 +14,8 @@ const resolvers = {
         throw new Error('Failed to fetch users.');
       }
     },
+
+    
     // Get a single user by its ID
     singleUser: async (_, { _id }) => {
       try {
@@ -29,6 +31,8 @@ const resolvers = {
         throw new ApolloError
       }
     },
+
+
     // Get all thoughts
     getThoughts: async () => {
       try {
@@ -38,6 +42,8 @@ const resolvers = {
         throw new Error("Failed to fetch thoughts.");
       }
     },
+
+
     // Get a single thought by its ID
     getSingleThought: async (_, { _id }) => {
       try {
@@ -51,14 +57,18 @@ const resolvers = {
       }
     },
   },
+
+
   Thought: {
     // Resolve the virtual property 'reactionCount' for Thought type
     reactionCount: (parent) => parent.reactions.length,
   },
+
   User: {
     // Resolve the virtual property 'friendCount' for User type
     friendCount: (parent) => parent.friends.length,
     
+
       // Resolve the 'thoughts' field for the User type
       thoughts: async (parent) => {
         try {
@@ -68,6 +78,8 @@ const resolvers = {
           throw new Error('Failed to fetch thoughts for user.');
         }
       },
+
+
       // Resolve the 'friends' field for the User type
       friends: async (parent) => {
         try {
@@ -83,5 +95,6 @@ const resolvers = {
       friendCount: (parent) => parent.friends.length,
   },
 };
+
 
 module.exports = resolvers;
