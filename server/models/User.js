@@ -1,35 +1,40 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-
-
+const { Schema, model } = require("mongoose");
+const bcrypt =require('bcrypt');
 
 const userSchema = new Schema(
   {
     username: {
       type: String,
+      unique:true,
       required: true,
-      unique: true,
+      trim:true
     },
     email: {
       type: String,
+      unique:true,
       required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
+      match: /.+\@.+\..+/,
     },
-    password: {
-      type: String,
-      required: true,
+    password:{
+      type:String,
+      required:true,
     },
-    // set savedBooks to be an array of data that adheres to the bookSchema
+    thoughts:[{
+      type:Schema.Types.ObjectId,
+      ref:'thoughts'
+    }],
+    friends:[{
+      type:Schema.Types.ObjectId,
+      ref:'User'
+    }],
   },
-  // set this to use virtual below
   {
     toJSON: {
       virtuals: true,
     },
+    id: false,
   }
-  );
-  // Likes: [bookSchema],
+);
 
 // hash user password
 userSchema.pre('save', async function (next) {
@@ -46,11 +51,11 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-// userSchema.virtual('bookCount').get(function () {
-//   return this.savedBooks.length;
-// });
+userSchema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
-const User = model('User', userSchema);
+// Initialize our User model
+const User = model("user", userSchema);
 
 module.exports = User;
