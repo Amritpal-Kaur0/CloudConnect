@@ -127,6 +127,18 @@ addFriend: async (_, { _id, friendId }) => {
     throw new Error('Failed to add friend.');
   }
 },
+    // Delete a user
+    deleteUser: async (_, { _id }) => {
+      try {
+        const deletedUser = await User.findByIdAndDelete(_id);
+        if (!deletedUser) {
+          throw new Error('User not found.');
+        }
+        return { message: 'User deleted.' };
+      } catch (err) {
+        throw new Error('Failed to delete user.');
+      }
+    },
   },
 };
 

@@ -59,6 +59,9 @@ type Mutation {
 
   # Add a friend to a user
   addFriend(_id: ID!, friendId: ID!): User!
+
+  # delete user
+  deleteUser(_id: ID!): DeletionResult!
 }
 
 `
