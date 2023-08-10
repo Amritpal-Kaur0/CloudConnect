@@ -9,7 +9,7 @@ const multer = require("multer");
 const router = express.Router();
 
 // Route imports 
-
+const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 
 const path = require("path");
@@ -58,6 +58,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 
 // Routing endpoints 
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 // listening the port 
 app.listen(3001, () => {
