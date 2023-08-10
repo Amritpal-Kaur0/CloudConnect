@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
-//Signup 
+//Signup /to create new user
 router.post("/register", async (req, res) => {
   try {
     //generate bcrypt password and salt
@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-//LOGIN
+//To login the existing user
 router.post("/login", async (req, res) => {
     try {
       const user = await User.findOne({ email: req.body.email });

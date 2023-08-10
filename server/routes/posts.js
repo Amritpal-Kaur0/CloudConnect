@@ -3,7 +3,7 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 
 
-//get a post
+//get a post by id
 
 router.get("/:id", async (req, res) => {
     try {
@@ -14,7 +14,7 @@ router.get("/:id", async (req, res) => {
     }
   });
 
-  //create a post
+  //create a new  post
 
 router.post("/", async (req, res) => {
     const newPost = new Post(req.body);
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
   });
 
 
-  //update a post
+  //updating the exisiting  post
 
 router.put("/:id", async (req, res) => {
     try {
@@ -59,6 +59,7 @@ router.delete("/:id", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
   //like / dislike a post
   
   router.put("/:id/like", async (req, res) => {
@@ -76,7 +77,7 @@ router.delete("/:id", async (req, res) => {
     }
   });
   
-  //get timeline posts
+  //get timeline posts/ including users and their friends posts
   
   router.get("/timeline/:userId", async (req, res) => {
     try {

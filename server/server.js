@@ -14,11 +14,11 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const path = require("path");
 
-// confog to get .env 
+
+// config to get .env 
 dotenv.config();
 
-
-// moongoose connect from  mongo docs 
+// moongoose connect got from mongo docs 
 mongoose.connect(
   process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -26,6 +26,7 @@ mongoose.connect(
     console.log("Connected to MongoDB");
   }
 );
+//to server static files
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //Middlewares
@@ -33,7 +34,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
-// multer storage 
+// multer setup for storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
@@ -44,9 +45,6 @@ const storage = multer.diskStorage({
 });
 
 
-// app.get('/',(req,res)=>{
-//   res.send("Welcome to Homepage of CloudConnect")
-// })
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   try {
@@ -55,13 +53,16 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     console.error(error);
   }
 });
+// app.get('/',(req,res)=>{
+//   res.send("Welcome to Homepage of CloudConnect")
+// })
 
 // Routing endpoints 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 
-// listening the port 
+// listening  to the port 
 app.listen(3001, () => {
   console.log("Backend server is running!");
 });
