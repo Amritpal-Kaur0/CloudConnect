@@ -1,52 +1,67 @@
-const express = require('express');
-const path = require("path");
-const mongoose =require('mongoose');
-const dotenv=require('dotenv').config()
-const helmet =require('helmet');
-const morgan= require('morgan');
-
-
-
-const db = require("./config/connection");
-const { ApolloServer } = require("apollo-server-express");
-const { authMiddleware } = require("./utils/auth");
-const { typeDefs, resolvers } = require("./schemas/index");
-
-
+// Imports 
+const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const multer = require("multer");
+const router = express.Router();
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
+// Route imports 
 
-app.use(express.urlencoded({ extended: true }));
+const authRoute = require("./routes/auth");
+
+const path = require("path");
+
+// confog to get .env 
+dotenv.config();
+
+
+// moongoose connect from  mongo docs 
+mongoose.connect(
+  process.env.MONGO_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("Connected to MongoDB");
+  }
+);
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+//Middlewares
 app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
 
-// if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build") ));
-}
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// multer storage 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
 });
 
-const startApolloServer = async (typeDefs, resolvers) => {
-  await server.start();
-  server.applyMiddleware({ app });
 
-  db.once("open", () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(
-        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
-      );
-    });
-  });
-};
+// app.get('/',(req,res)=>{
+//   res.send("Welcome to Homepage of CloudConnect")
+// })
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  try {
+    return res.status(200).json("File uploded successfully");
+  } catch (error) {
+    console.error(error);
+  }
+});
 
-startApolloServer(typeDefs, resolvers);
+// Routing endpoints 
+app.use("/api/auth", authRoute);
+
+// listening the port 
+app.listen(3001, () => {
+  console.log("Backend server is running!");
+});
+
 
