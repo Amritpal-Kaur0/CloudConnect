@@ -1,61 +1,63 @@
-const { Schema, model } = require("mongoose");
-const bcrypt =require('bcrypt');
+const mongoose = require("mongoose");
 
-const userSchema = new Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      unique:true,
-      required: true,
-      trim:true
+      require: true,
+      min: 3,
+      max: 18,
+      unique: true,
     },
     email: {
       type: String,
-      unique:true,
       required: true,
-      match: /.+\@.+\..+/,
+      max: 30,
+      unique: true,
     },
-    password:{
-      type:String,
-      required:true,
+    password: {
+      type: String,
+      required: true,
+      min: 6,
     },
-    thoughts:[{
-      type:Schema.Types.ObjectId,
-      ref:'thoughts'
-    }],
-    friends:[{
-      type:Schema.Types.ObjectId,
-      ref:'User'
-    }],
+    profilePicture: {
+      type: String,
+      default: "",
+    },
+    coverPicture: {
+      type: String,
+      default: "",
+    },
+    followers: {
+      type: Array,
+      default: [],
+    },
+    followings: {
+      type: Array,
+      default: [],
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    desc: {
+      type: String,
+      max: 50,
+    },
+    city: {
+      type: String,
+      max: 25,
+    },
+    from: {
+      type: String,
+      max: 40,
+    },
+    relationship: {
+      type: Number,
+      enum: [1, 2, 3],
+    },
   },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-    id: false,
-  }
+  { timestamps: true }
 );
 
-// hash user password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
-
-  next();
-});
-
-// custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
-
-userSchema.virtual("friendCount").get(function () {
-  return this.friends.length;
-});
-
-// Initialize our User model
-const User = model("user", userSchema);
-
-module.exports = User;
+module.exports = mongoose.model("User", UserSchema);
