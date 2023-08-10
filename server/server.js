@@ -11,7 +11,7 @@ const router = express.Router();
 // Route imports 
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
-
+const postRoute = require("./routes/posts");
 const path = require("path");
 
 // confog to get .env 
@@ -59,6 +59,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 // Routing endpoints 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
 
 // listening the port 
 app.listen(3001, () => {
