@@ -1,32 +1,36 @@
 .profile {
     max-width: 1500px;
-    height: auto;
+    height: 700px;
     
     margin: 0 auto;
     padding: 20px;
     border: 5px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #f1f4c3;
   }
-  .box{
-    background-color: white;
+ .box{
+    background-color: #f1f4c3;
     color: blue;
+    
   }
 
   .profile-image {
     border-radius: 100%;
-    border: 3px solid #0c0101; /* You can adjust the border color as needed */
+    border: 3px solid #0c0101; 
   }
   
   
   .profile h2 {
     margin-bottom: 10px;
+    font-weight: bold;
+    
   }
   
   .profile-buttons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    
   }
   
   .profile-buttons button {
@@ -37,12 +41,16 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
+    
   }
   
   .profile-form {
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
+    
+    
   }
   
   .profile-form label {
@@ -57,5 +65,6 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    
   }
   
