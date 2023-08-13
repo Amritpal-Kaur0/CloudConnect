@@ -1,70 +1,55 @@
-import React, { useState } from 'react';
-import { Container, TextField, Button, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles((theme) => ({
-  // ... your existing styles
-}));
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Form, Button } from 'react-bootstrap';
 
 function SignupForm() {
-  const classes = useStyles();
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
-
-  const handleEmailChange = (event) => {
-    const newEmail = event.target.value;
-    setEmail(newEmail);
-
-    if (!validateEmail(newEmail)) {
-      setEmailError('Invalid email address');
-    } else {
-      setEmailError('');
-    }
-  };
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailRegex.test(email);
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (!emailError) {
-      // Perform form submission or other actions
-    } else {
-      // Handle error or display a message
-    }
-  };
+//FORM LOGIC
+};
 
   return (
-    <Container className={classes.container}>
-      <div className={classes.formContainer}>
-        <Typography variant="h2" className="text-2xl">
-          SIGN UP
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            className={classes.inputField}
-            type="email"
-            id="inputEmail"
-            label="Email address"
-            variant="outlined"
-            value={email}
-            onChange={handleEmailChange}
-            error={Boolean(emailError)}
-            helperText={emailError}
-          />
-          {/* Other input fields */}
-          <Button
-            className={`${classes.submitButton} btn-primary`}
-            type="submit"
-            variant="contained"
-            disabled={Boolean(emailError)}
-          >
+    <Container>
+      <div className="signup d-flex justify-content-center">
+        <Form onSubmit={handleSubmit}>
+          <h2 className="text-2xl">SIGN UP</h2>
+
+          <Form.Group className="mb-3 input">
+            <Form.Control
+              type="email"
+              placeholder="Email address"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <Form.Control.Feedback type="invalid">
+              Please enter a valid email address.
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              required
+              minLength="8"
+            />
+            <Form.Control.Feedback type="invalid">
+              Password must be at least 8 characters long.
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group className="mb-3 input">
+            <Form.Control type="text" placeholder="First Name" required />
+          </Form.Group>
+
+          <Form.Group className="mb-3 input">
+            <Form.Control type="text" placeholder="Last Name" required />
+          </Form.Group>
+
+          <Button type="submit" className="btn px-4 m-3 btn-primary">
             SUBMIT
           </Button>
-        </form>
+        </Form>
       </div>
     </Container>
   );

@@ -1,62 +1,39 @@
 import React from 'react';
-import { Container, TextField, Button, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-  },
-  formContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: theme.spacing(3),
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-  },
-  inputField: {
-    marginBottom: theme.spacing(3),
-  },
-  submitButton: {
-    margin: theme.spacing(2),
-  },
-}));
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { Container, Form, Button } from 'react-bootstrap';
 
 function LoginForm() {
-  const classes = useStyles();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+//submit logic
+  };
 
   return (
-    <Container className={classes.container}>
-      <div className={classes.formContainer}>
-        <Typography variant="h2" className="text-2xl">
-          LOGIN
-        </Typography>
-        <form>
-          <TextField
-            className={classes.inputField}
-            type="email"
-            id="inputEmail"
-            label="Email address"
-            variant="outlined"
-          />
-          <TextField
-            className={classes.inputField}
-            type="password"
-            id="inputPassword"
-            label="Password"
-            variant="outlined"
-          />
-          <Button
-            className={`${classes.submitButton} btn-primary`}
-            type="submit"
-            variant="contained"
-            color="primary"
-          >
+    <Container>
+      <div className="login d-flex justify-content-center">
+        <Form onSubmit={handleSubmit}>
+          <h2 className="text-2xl">LOGIN</h2>
+
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="email"
+              placeholder="Email address"
+              id="inputEmail"
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              id="inputPassword"
+            />
+          </Form.Group>
+
+          <Button type="submit" className="btn btn-primary px-4 m-3">
             SUBMIT
           </Button>
-        </form>
+        </Form>
       </div>
     </Container>
   );
