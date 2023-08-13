@@ -22,10 +22,11 @@ const ProfilePage = () => {
 
   return (
     <div className="profile">
-        <img src="/images/Profile Image.jpg" alt="Profile Image" className="profile-image" />
- 
-    
-      <h2 className=' text-center mx-3 p-3 text-3xl box'>Profile Page</h2>
+
+        <img src="./images/ProfileImage.jpg" alt="ProfileImage" className="profile-image" />
+
+
+      <h2 className='text-center mx-3 p-3 text-3xl box'>Profile Page</h2>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem labore sed amet id eaque impedit, architecto tempora ratione reiciendis natus.
       </p>
       
