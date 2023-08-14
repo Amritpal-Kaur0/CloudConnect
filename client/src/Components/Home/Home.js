@@ -1,7 +1,8 @@
 import React from "react";
 import { Global } from "@emotion/react";
-import pic from '../../pic.png';
-import centerPic from '../../Capture.png';
+// import pic from '../../pic.png';
+// import centerPic from '../../Capture.png';
+import "./Home.css";
 
 const scrollbarStyles = `
   ::-webkit-scrollbar {
@@ -38,7 +39,7 @@ export default function Home() {
       <Global styles={scrollbarStyles} />
 
       <div style={{ display: "flex", justifyContent: "left", textAlign: "left", marginTop: "1rem", marginLeft: "2rem" }}>
-        <div style={{ flex: 6 }}>
+        {/* <div style={{ flex: 6 }}>
           <h1>PROJECT NAME</h1>
           <p>
             Hello from MY APP
@@ -69,23 +70,42 @@ export default function Home() {
           >
             Click Me
           </button>
-        </div>
+        </div> */}
 
         <div style={{ flex: 4, display: "flex", justifyContent: "right", textAlign: "right", marginTop: "4rem", marginRight: "2rem" }}>
-          <img
+          {/* <img
             src={pic}
+            alt="Your Image"
+            style={{ maxWidth: "400px", height: "auto" }}
+          /> */}
+        </div>
+      </div>
+
+      <div id="post-box" style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
+        <div id="username">
+          <p>
+            username
+          </p>
+        </div>
+        <div id="text-content">
+          <p>
+            Text content
+          </p>
+        </div>
+        <div id="img-content">
+          <img
+            src={require("./img2.png")}
             alt="Your Image"
             style={{ maxWidth: "400px", height: "auto" }}
           />
         </div>
-      </div>
-
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
-        <img
-          src={centerPic}
-          alt="Your Image"
-          style={{ maxWidth: "400px", height: "auto" }}
-        />
+        <div id="likeBtn">
+          Liek
+        </div>
+        <div id="comment">
+          <input type="text"></input>
+        </div>
+        
       </div>
     </div>
   );

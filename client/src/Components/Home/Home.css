@@ -1,0 +1,23 @@
+#post-box {
+    background-color: rgb(255, 255, 255, 0.1);
+    width: 33%;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    border: 0 solid white;
+    border-radius: 33px;
+}
+
+#username {
+    padding-top: 2%;
+    padding-left: 5%;
+}
+
+#text-content {
+    padding-top: 10%;
+}
+
+#img-content {
+    padding-top: 10%;
+}
