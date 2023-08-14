@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, styled, Box } from "@mui/material";
-
-// import Logo from "../../LOGO.png";
+import Logo from "../img/clouds.png";
 
 const Header = styled(AppBar)`
   background: #161616;
@@ -14,6 +13,8 @@ const LogoImage = styled("img")`
   margin-right: 10px;
 `;
 
+
+
 const Tabs = styled(NavLink)`
   font-size: 20px;
   margin-right: 20px;
@@ -21,9 +22,10 @@ const Tabs = styled(NavLink)`
   text-decoration: none;
 
   &:hover {
-    color: #ffffff80; /* Hover color with transparency */
+    color: #ffffff80; 
   }
 `;
+
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const handleLogout = () => {
@@ -34,7 +36,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <Header position="static">
       <Toolbar>
         <NavLink to="/">
-          {/* <LogoImage src={Logo} alt="Logo" /> */}
+          <LogoImage src={Logo} alt="Logo" />
         </NavLink>
         <Tabs to="/search">Component 1</Tabs>
         <Tabs to="/add">Component 2</Tabs>
@@ -59,10 +61,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         marginTop: '8px',
         marginRight: '8px',
         textDecoration: 'none',
-        padding: "10px"
       }}
     >
-      NavBar Project Name
+      LogOut
     </NavLink>
       </Toolbar>
     </Header>
