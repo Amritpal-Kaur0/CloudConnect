@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, styled, Box } from "@mui/material";
-import Logo from "../../LOGO.png";
+
+// import Logo from "../../LOGO.png";
 
 const Header = styled(AppBar)`
   background: #161616;
@@ -33,7 +34,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <Header position="static">
       <Toolbar>
         <NavLink to="/">
-          <LogoImage src={Logo} alt="Logo" />
+          {/* <LogoImage src={Logo} alt="Logo" /> */}
         </NavLink>
         <Tabs to="/search">Component 1</Tabs>
         <Tabs to="/add">Component 2</Tabs>

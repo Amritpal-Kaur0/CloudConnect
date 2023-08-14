@@ -72,20 +72,20 @@ export default function Home() {
         </div>
 
         <div style={{ flex: 4, display: "flex", justifyContent: "right", textAlign: "right", marginTop: "4rem", marginRight: "2rem" }}>
-          <img
+          {/* <img
             src={pic}
             alt="Your Image"
             style={{ maxWidth: "400px", height: "auto" }}
-          />
+          /> */}
         </div>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
-        <img
+        {/* <img
           src={centerPic}
           alt="Your Image"
           style={{ maxWidth: "400px", height: "auto" }}
-        />
+        /> */}
       </div>
     </div>
   );
