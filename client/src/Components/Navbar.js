@@ -34,8 +34,17 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       <Toolbar>
         <NavLink to="/">
           <LogoImage src={Logo} alt="Logo" />
+          Cloud Connect
         </NavLink>
-        
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Messages
+        </NavLink>
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Componet 3
+        </NavLink>
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Component 4
+        </NavLink>
   
         
         <Box flexGrow={1} />
