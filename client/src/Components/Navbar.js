@@ -13,6 +13,8 @@ const LogoImage = styled("img")`
   margin-right: 10px;
 `;
 
+
+
 const Tabs = styled(NavLink)`
   font-size: 20px;
   margin-right: 20px;
@@ -20,9 +22,10 @@ const Tabs = styled(NavLink)`
   text-decoration: none;
 
   &:hover {
-    color: #ffffff80; /* Hover color with transparency */
+    color: #ffffff80; 
   }
 `;
+
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const handleLogout = () => {
@@ -32,19 +35,11 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <Header position="static">
       <Toolbar>
-        <NavLink to="/">
-          <LogoImage src={Logo} alt="Logo" />
-          Cloud Connect
-        </NavLink>
-        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
-          Messages
-        </NavLink>
-        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
-          Componet 3
-        </NavLink>
-        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
-          Component 4
-        </NavLink>
+      <Tabs to="/search">Component 1</Tabs>
+        <Tabs to="/add">Component 2</Tabs>
+        <Tabs to="/all">Component 3</Tabs>
+        <Tabs to="/search">Component 4</Tabs>
+        <Tabs to="/search">Component 5</Tabs>
   
         
         <Box flexGrow={1} />
@@ -63,7 +58,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         marginTop: '8px',
         marginRight: '8px',
         textDecoration: 'none',
-        padding: "10px"
+        padding: '10px'
       }}
     >
       LogOut
