@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, styled, Box } from "@mui/material";
-//import Logo from "../../LOGO.png";
+import Logo from "../img/clouds.png";
 
 const Header = styled(AppBar)`
   background: #161616;
@@ -33,13 +33,18 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <Header position="static">
       <Toolbar>
         <NavLink to="/">
-         {/* <LogoImage src={Logo} alt="Logo" /> */}
+          <LogoImage src={Logo} alt="Logo" />
+          Cloud Connect
         </NavLink>
-        <Tabs to="/search">Component 1</Tabs>
-        <Tabs to="/add">Component 2</Tabs>
-        <Tabs to="/all">Component 3</Tabs>
-        <Tabs to="/search">Component 4</Tabs>
-        <Tabs to="/search">Component 5</Tabs>
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Messages
+        </NavLink>
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Componet 3
+        </NavLink>
+        <NavLink to="/message" style={linkStyle} activeStyle={linkHoverStyle}>
+          Component 4
+        </NavLink>
   
         
         <Box flexGrow={1} />
@@ -61,7 +66,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         padding: "10px"
       }}
     >
-      NavBar Project Name
+      LogOut
     </NavLink>
       </Toolbar>
     </Header>
