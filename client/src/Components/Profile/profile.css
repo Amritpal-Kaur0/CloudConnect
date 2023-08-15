@@ -7,16 +7,26 @@
     border: 5px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #f1f4c3;
+
+    
   }
  .box{
     background-color: #f1f4c3;
     color: blue;
     
+    
   }
 
+  .profile-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
   .profile-image {
     border-radius: 100%;
     border: 3px solid #0c0101; 
+  
+    
   }
   
   
