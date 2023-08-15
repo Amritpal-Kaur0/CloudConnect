@@ -21,14 +21,10 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-<<<<<<< HEAD
             <Route path="/home" element={<Home />} />
-           
-=======
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/login" element={<LoginForm/>} />
             <Route path="/signup" element={<SignupForm />} />
->>>>>>> f85ea6fce733c71790bf002fe7eb197fc76f793d
           </Routes>
         </>
       </Router>

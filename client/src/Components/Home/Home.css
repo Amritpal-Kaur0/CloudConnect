@@ -21,3 +21,19 @@
 #img-content {
     padding-top: 10%;
 }
+
+.like-btn {
+    width: 100px;
+    margin-left: 2rem;
+}
+
+#comment {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 0 5rem;
+}

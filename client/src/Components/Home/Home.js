@@ -81,29 +81,38 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="post-box" style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
+      <div id="post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
         <div id="username">
+          <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
           <p>
             username
           </p>
-        </div>
-        <div id="text-content">
+          <span className="bg-slate-500 text-white text-lg">
+            5 minutes ago
+          </span>
+          <br/>
+        {/* </div> */}
+        {/* <div id="text-content"> */}
           <p>
             Text content
           </p>
         </div>
         <div id="img-content">
           <img
-            src={require("./img2.png")}
+            src={require("./img1.jpg")}
             alt="Your Image"
-            style={{ maxWidth: "400px", height: "auto" }}
+            style={{ height: "auto" , width:"100%", padding:"3%"}}
           />
         </div>
-        <div id="likeBtn">
-          Liek
-        </div>
-        <div id="comment">
-          <input type="text"></input>
+        <div className="flex justify-evenly">
+          <div id="likeBtn">
+            <img className="like-btn" src={require("./like.png")}
+            style={{width:"10%"}} />
+          </div>
+          <div id="comment" className="flex column-reverse">
+              <input type="text" className="w-50 input"></input>
+              <button style={{background:"blue",color:"#ffF", marginTop:"2%"}}>Post Comment</button>
+          </div>
         </div>
         
       </div>

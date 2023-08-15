@@ -35,17 +35,11 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <Header position="static">
       <Toolbar>
-<<<<<<< HEAD
-        <NavLink to="/">
-          <LogoImage src={Logo} alt="Logo" />
-        </NavLink>
-=======
       <Tabs to="/search">Component 1</Tabs>
         <Tabs to="/add">Component 2</Tabs>
         <Tabs to="/all">Component 3</Tabs>
         <Tabs to="/search">Component 4</Tabs>
         <Tabs to="/search">Component 5</Tabs>
->>>>>>> f85ea6fce733c71790bf002fe7eb197fc76f793d
   
         
         <Box flexGrow={1} />
