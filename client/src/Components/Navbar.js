@@ -35,7 +35,10 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <Header position="static">
       <Toolbar>
-      <Tabs to="/search">Component 1</Tabs>
+        <NavLink to="/">
+          <LogoImage src={Logo} alt="Logo" />
+        </NavLink>
+        <Tabs to="/search">Component 1</Tabs>
         <Tabs to="/add">Component 2</Tabs>
         <Tabs to="/all">Component 3</Tabs>
         <Tabs to="/search">Component 4</Tabs>
@@ -58,7 +61,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         marginTop: '8px',
         marginRight: '8px',
         textDecoration: 'none',
-        padding: '10px'
       }}
     >
       LogOut
