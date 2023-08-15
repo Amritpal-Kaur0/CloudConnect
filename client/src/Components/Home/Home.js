@@ -1,7 +1,8 @@
 import React from "react";
 import { Global } from "@emotion/react";
-import pic from '../../pic.png';
-import centerPic from '../../Capture.png';
+// import pic from '../../pic.png';
+// import centerPic from '../../Capture.png';
+import "./Home.css";
 
 const scrollbarStyles = `
   ::-webkit-scrollbar {
@@ -38,7 +39,7 @@ export default function Home() {
       <Global styles={scrollbarStyles} />
 
       <div style={{ display: "flex", justifyContent: "left", textAlign: "left", marginTop: "1rem", marginLeft: "2rem" }}>
-        <div style={{ flex: 6 }}>
+        {/* <div style={{ flex: 6 }}>
           <h1>PROJECT NAME</h1>
           <p>
             Hello from MY APP
@@ -69,7 +70,7 @@ export default function Home() {
           >
             Click Me
           </button>
-        </div>
+        </div> */}
 
         <div style={{ flex: 4, display: "flex", justifyContent: "right", textAlign: "right", marginTop: "4rem", marginRight: "2rem" }}>
           {/* <img
@@ -80,12 +81,40 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
-        {/* <img
-          src={centerPic}
-          alt="Your Image"
-          style={{ maxWidth: "400px", height: "auto" }}
-        /> */}
+      <div id="post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
+        <div id="username">
+          <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
+          <p>
+            username
+          </p>
+          <span className="bg-slate-500 text-white text-lg">
+            5 minutes ago
+          </span>
+          <br/>
+        {/* </div> */}
+        {/* <div id="text-content"> */}
+          <p>
+            Text content
+          </p>
+        </div>
+        <div id="img-content">
+          <img
+            src={require("./img1.jpg")}
+            alt="Your Image"
+            style={{ height: "auto" , width:"100%", padding:"3%"}}
+          />
+        </div>
+        <div className="flex justify-evenly">
+          <div id="likeBtn">
+            <img className="like-btn" src={require("./like.png")}
+            style={{width:"10%"}} />
+          </div>
+          <div id="comment" className="flex column-reverse">
+              <input type="text" className="w-50 input"></input>
+              <button style={{background:"blue",color:"#ffF", marginTop:"2%"}}>Post Comment</button>
+          </div>
+        </div>
+        
       </div>
     </div>
   );
