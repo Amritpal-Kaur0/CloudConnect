@@ -81,6 +81,28 @@ export default function Home() {
         </div>
       </div>
 
+      <div id="new-post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
+        <div id="username">
+          <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
+          <p>
+            username
+          </p>
+          <span className="bg-slate-500 text-white text-lg">
+            5 minutes ago
+          </span>
+          <br/>
+          <div style={{ margin: "10px" }}>
+            <p>Enter post text here:</p>
+            <input type="text"></input>
+          </div>
+          <div style={{ margin: "10px" }}>
+            <p>Upload image here:</p>
+            <img className="upl-img-btn" src={require("./upload-img.png")} style={{width: "10%", margin: "10px"}}></img>
+          </div>
+        </div>
+        
+      </div>
+
       <div id="post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
         <div id="username">
           <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
@@ -91,8 +113,6 @@ export default function Home() {
             5 minutes ago
           </span>
           <br/>
-        {/* </div> */}
-        {/* <div id="text-content"> */}
           <p>
             Text content
           </p>
