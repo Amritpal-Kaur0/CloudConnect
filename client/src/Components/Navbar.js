@@ -8,21 +8,40 @@ const Header = styled(AppBar)`
 `;
 
 const LogoImage = styled("img")`
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
+  width: 100%;
+max-width: 80px;
+  margin-right: 3rem;
 `;
 
 
 
 const Tabs = styled(NavLink)`
   font-size: 20px;
-  margin-right: 20px;
+  margin-right: 3rem;
   color: white;
   text-decoration: none;
 
   &:hover {
-    color: #ffffff80; 
+    color: rgb(255, 0, 140); 
+
+    
+  }
+`;
+
+const LogoutLink = styled(NavLink)`
+  color: white;
+  background-color: navy;
+  border: none;
+  padding: 8px 16px;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+  textDecoration: none;
+
+  &:hover {
+    background-color: rgb(255, 0, 140); 
   }
 `;
 
@@ -38,33 +57,21 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         <NavLink to="/">
           <LogoImage src={Logo} alt="Logo" />
         </NavLink>
-        <Tabs to="/search">Component 1</Tabs>
-        <Tabs to="/add">Component 2</Tabs>
-        <Tabs to="/all">Component 3</Tabs>
-        <Tabs to="/search">Component 4</Tabs>
-        <Tabs to="/search">Component 5</Tabs>
+        <Tabs to="/add">Post</Tabs>
+        <Tabs to="/search">Find</Tabs>
+        <Tabs to="/profile">Profile</Tabs>
   
         
         <Box flexGrow={1} />
-        <NavLink
+        <LogoutLink
       className="nav-link fs-5"
       to="/"
       onClick={handleLogout}
-      style={{
-        color: 'white',
-        backgroundColor: 'blue',
-        border: 'none',
-        padding: '8px 16px',
-        position: 'absolute',
-        top: 15,
-        right: 0,
-        marginTop: '8px',
-        marginRight: '8px',
-        textDecoration: 'none',
-      }}
-    >
+      >
+
+  
       LogOut
-    </NavLink>
+    </LogoutLink>
       </Toolbar>
     </Header>
   );

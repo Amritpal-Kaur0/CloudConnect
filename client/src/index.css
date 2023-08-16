@@ -98,3 +98,12 @@ body {
 .rando:nth-child(8n) {
   background-color: rgb(1, 126, 103);
 } */
+
+@media (max-width: 600px) {
+  .nav-link.fs-5 {
+    position: static;
+    display: block;
+    margin-top: 10px;
+    margin-right: 0;
+  }
+}
