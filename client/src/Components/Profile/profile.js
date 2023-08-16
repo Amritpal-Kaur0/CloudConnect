@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './profile.css';
-
+import Profileimg from "./images/ProfileImage.jpg"
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [username, setUsername] = useState('John Doe');
@@ -24,8 +24,9 @@ const ProfilePage = () => {
 
   return (
     <div className="profile">
-      <img src="./Profile/images/ProfileImage" alt="ProfileImage" className="profile-image" />
-
+      <div class="profile-image-container">
+      <img src={Profileimg} alt="ProfileImage" className="profile-image" />
+      </div>
       <h2 className="text-center mx-3 p-3 text-3xl box">Profile Page</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem labore sed amet id
