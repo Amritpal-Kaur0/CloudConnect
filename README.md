@@ -50,17 +50,13 @@ drwa.io svg
 
 - [Animation](https://lottiefiles.com/animations/login-aUnT5PRo2P)
 
--[Axios] 
-(https://axios-http.com/docs/intro)
+- [Axios](https://axios-http.com/docs/intro)
 
--[TimeAgo] 
-(https://www.npmjs.com/package/timeago.js/v/4.0.0-beta.)3
+- [TimeAgo](https://www.npmjs.com/package/timeago.js/v/4.0.0-beta.)
 
--[Documentation]
-(http://timeago.yarp.com)
+- [Documentation](http://timeago.yarp.com)
 
--[ContextApi]
-(https://legacy.reactjs.org/docs/context.html)
+- [ContextApi](https://legacy.reactjs.org/docs/context.html)
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 ## Link To Deployed Website
