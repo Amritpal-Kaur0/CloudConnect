@@ -1,13 +1,15 @@
 .profileContainer{
     .profileright{
         flex:9;
-
+        
         .righttop{
-.profileCover{
-height: 320px;
-position: relative;
-
-    .ProfileCoverImg{
+            margin: 15px;
+            .profileCover{
+                height: 320px;
+                position: relative;
+                
+                animation: zoomIn 3s ease forwards;
+                .ProfileCoverImg{
 width: 100%;
 height: 250px;
 object-fit: cover;

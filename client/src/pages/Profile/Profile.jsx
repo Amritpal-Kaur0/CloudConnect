@@ -9,20 +9,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Profile() {
-  const PF =process.env.REACT_APP_PUBLIC_FOLDER;
-  const [user,setUser]=useState({});
-  const username =useParams().username;
-  
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [user, setUser] = useState({});
+  const username = useParams().username;
 
-  useEffect(()=>{
-    const fetchUser= async() =>{
-      const res =  await axios.get(`/users?username=${username}`);
-      console.log(res)
-      setUser(res.data)
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`/users?username=${username}`);
+      // console.log(res)
+      setUser(res.data);
     };
     // console.log("Post Uploaded")
-  fetchUser();
-  },[username]);
+    fetchUser();
+  }, [username]);
   return (
     <>
       <Navbar />
@@ -31,24 +30,34 @@ export default function Profile() {
         <Sidebar />
         <div className="profileright">
           <div className="righttop">
-          <div className="profileCover">
+            <div className="profileCover">
+              <img
+                className="ProfileCoverImg"
+                src={
+                  user.coverPicture ? PF + user.coverPicture : PF + "cover.webp"
+                }
+                alt=""
+              />
+              <img
+                className="ProfileImg"
+                src={
+                  user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + "nopic.jpg"
+                }
+                alt=""
+              />
+            </div>
 
-          <img className="ProfileCoverImg" src={user.coverPicture || PF+"cover.webp"} alt="" />
-          <img className="ProfileImg" src={user.profilePicture || PF+"nopic.jpg"}  alt="" />
-          </div>
-
-          <div className="profileInfo">
-            <h4 className="profileInfoName">{user.username}</h4>
-            <p className="profiledescription">{user.desc}</p>
-          </div>
-
-
+            <div className="profileInfo">
+              <h4 className="profileInfoName">{user.username}</h4>
+              <p className="profiledescription">{user.desc}</p>
+            </div>
           </div>
 
           <div className="rightbottom">
-          <Newsfeed username={username}/>
-          <Rightbar user={user} />
-            
+            <Newsfeed username={username} />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>
