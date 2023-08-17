@@ -1,0 +1,92 @@
+.rightbar {
+    flex: 3;
+  margin: 15px;
+  animation: slideUp 3s ease forwards;
+    .wrapper {
+      
+      .OnlineTitle {
+        margin-bottom: 20px;
+          font-size: 20px;
+          font-weight: 700;
+      }
+      .OnlineTitle:hover {
+          font-weight: 500;
+          text-decoration: overline ;
+          cursor: pointer;
+      }
+      .bottom {
+          box-shadow: inset 1px 10px 20px -1px rgba(0, 0, 0, 0.37);
+          background-color: white;
+        .list {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+  
+         
+        }
+      }
+      .top {
+          height: 60%;
+      }
+    }
+  }
+  
+  .followbtn{
+    background-color: chocolate;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .Righttitle{
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px;
+  }
+  .Righttitle:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  
+  }
+  .rightbarInfo{
+    margin-bottom: 30px;
+    .infoItem{
+      margin-bottom: 10px;
+      .InfoKey{
+  font-weight: 500;
+  margin-right: 15px;
+  color: rgb(144, 112, 112);
+      }
+      .InfoValue{
+  font-weight: 300;
+      }
+    }
+  }
+  .folowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  .following{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    .followingImg{
+  width: 100px;
+  height: 100px;object-fit: cover;
+  border-radius: 5px;
+    }
+    .followingName{
+  
+    }
+  }
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

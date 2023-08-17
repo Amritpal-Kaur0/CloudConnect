@@ -1,0 +1,75 @@
+.sidebar {
+  flex: 3;
+  height: calc(100vh - 50px);
+  box-shadow: inset 1px 10px 20px -1px rgba(0,0,0,0.37);
+  margin: 5px;
+  border-radius: 15px;
+  // background-color: rgb(252, 252, 252);
+  background-color: linear-gradient(pink,green);
+  overflow: scroll;
+  position: sticky;
+  top: 50px;
+  animation: slideUp 3s ease forwards;
+
+::-webkit-scrollbar{
+width: 5px;
+height: 6px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: rgb(244, 237, 228);
+
+  }
+  ::-webkit-scrollbar-thumb{
+  background-color: rgb(179, 178, 178);
+  }
+  .sidebarwrap {
+    // margin-top: 20px;
+    padding: 20px;
+
+    .list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  
+
+      .listItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        justify-content: start;
+
+        .listIcon {
+          margin-bottom: 5px;
+          margin-right: 15px;
+        
+        }
+
+        .listItemtext {
+          margin-top: 15px;
+          padding-bottom: 25px;
+          cursor: pointer;
+        }
+      }
+    }
+    hr {
+      margin: 20px 0;
+    }
+    .friendlist {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+     
+    }
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

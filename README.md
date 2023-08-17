@@ -20,10 +20,14 @@
 "Join the digital evolution with CloudConnect " - where connections transcend boundaries and social networking meets limitless possibilities! 🌐✨ #CloudConnectApp"
 
 
+
+
 ## Features
+![Video](./CloudConnect-Social%20App%20to%20Connect%20people.gif)
 
 
 ## Preview Images
+![Untitled Diagram drawio](https://github.com/Amritpal-Kaur0/CloudConnect/assets/128442182/b65f6c4b-8345-43d7-a870-0a0c8931057a)
 
 ## Technologies Used
  
@@ -46,6 +50,15 @@
 - [Lottie-react](https://www.npmjs.com/package/lottie-react)
 
 - [Animation](https://lottiefiles.com/animations/login-aUnT5PRo2P)
+
+- [Axios](https://axios-http.com/docs/intro)
+
+- [TimeAgo](https://www.npmjs.com/package/timeago.js/v/4.0.0-beta.)
+
+- [Documentation](http://timeago.yarp.com)
+
+- [ContextApi](https://legacy.reactjs.org/docs/context.html)
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 ## Link To Deployed Website
 
