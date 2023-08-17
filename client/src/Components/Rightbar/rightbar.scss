@@ -1,6 +1,7 @@
 .rightbar {
     flex: 3;
   margin: 15px;
+  animation: slideUp 3s ease forwards;
     .wrapper {
       
       .OnlineTitle {
@@ -30,6 +31,13 @@
     }
   }
   
+  .followbtn{
+    background-color: chocolate;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+  }
   .Righttitle{
   font-size: 18px;
   font-weight: 500;
@@ -71,4 +79,14 @@
   
     }
   }
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
