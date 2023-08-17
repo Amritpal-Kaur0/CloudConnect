@@ -30,7 +30,7 @@
 }
 
 #img-content {
-
+    object-fit: contain;
 }
 
 .like-btn {
@@ -47,4 +47,43 @@
 .input {
     width: 100%;
     padding: 0 5rem;
+}
+
+@media screen and (max-width: 850px) {
+    #new-post-box {
+        width: 60%;
+        font-size: 10px;
+    }
+
+    #new-post-text input {
+        width: 100%;
+    }
+
+    #post-box {
+        width: 60%;
+        font-size: 10px;
+    }
+
+    #img-content {
+        width: 100%;
+    }
+
+    #time-ago {
+        font-size: 10px;
+    }
+
+    #comment {
+        margin-top: 40px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #new-post-box {
+        width: 100%;
+    }
+
+    #post-box {
+        width: 100%;
+    }
 }

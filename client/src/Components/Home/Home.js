@@ -81,17 +81,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="new-post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
+      <div id="new-post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem" }}>
         <div id="username">
-          <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
+          <img id="pfp" src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
           <p>
             username
           </p>
-          <span className="bg-slate-500 text-white text-lg">
-            5 minutes ago
-          </span>
           <br/>
-          <div style={{ margin: "10px" }}>
+          <div id="new-post-text" style={{ margin: "10px" }}>
             <p>Enter post text here:</p>
             <input type="text"></input>
           </div>
@@ -103,13 +100,13 @@ export default function Home() {
         
       </div>
 
-      <div id="post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem", width:"40%" }}>
+      <div id="post-box" style={{ display: "flex", flexDirection:"column", flexWrap:"wrap", justifyContent: "center", marginTop: "3rem" }}>
         <div id="username">
-          <img src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
+          <img id="pfp" src={require("./pfp1.png")} style={{width: "40px", height:"40px",float:"left"}}></img>
           <p>
             username
           </p>
-          <span className="bg-slate-500 text-white text-lg">
+          <span id="time-ago" className="bg-slate-500 text-white text-lg">
             5 minutes ago
           </span>
           <br/>
@@ -127,7 +124,7 @@ export default function Home() {
         <div className="flex justify-evenly">
           <div id="likeBtn">
             <img className="like-btn" src={require("./like.png")}
-            style={{width:"10%"}} />
+            style={{width:"30px"}} />
           </div>
           <div id="comment" className="flex column-reverse">
               <input type="text" className="w-50 input"></input>
