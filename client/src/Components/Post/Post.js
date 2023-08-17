@@ -87,9 +87,9 @@ export default function Post({ post }) {
             <span className="likecount">{like} people liked it</span>
           </div>
 
-          <div className="right">
+          {/* <div className="right">
             <span className="comment">{post.comment} Comments</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

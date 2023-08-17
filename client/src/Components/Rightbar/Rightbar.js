@@ -66,14 +66,14 @@ export default function Rightbar({ user }) {
     return (
       <>
         <Animation />
-        <h4 className="OnlineTitle">Online Friends</h4>
+        {/* <h4 className="OnlineTitle">Online Friends</h4> */}
         {/* 1st online  */}
         <div className="bottom">
-          <ul className="list">
+          {/* <ul className="list">
             {Users.map((u) => (
               <Online key={u.id} user={u} />
             ))}
-          </ul>
+          </ul> */}
         </div>
       </>
     );
