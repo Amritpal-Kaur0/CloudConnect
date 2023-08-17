@@ -1,36 +1,51 @@
 import React from "react";
- 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./Components/Navbar";
-import Homepage from "./Components/Homepage";
-import ProfilePage from "./Components/Profile/profile";
-import SignupForm from "./Components/Signup";
-import LoginForm from "./Components/Login";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
-// import Messages from "./Components/Messages";
-import Home from "./Components/Home/Home";
+import Home from "./pages/home/Home";
+import "./App.css";
+import Profile from "./pages/profile/Profile";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+// import { Switch } from "@mui/material";
 
-
-
-function App() {
+export default function App() {
+  const {user}=useContext(AuthContext)
   return (
-    
-      <Router>
-        <>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/login" element={<LoginForm/>} />
-            <Route path="/signup" element={<SignupForm />} />
-          </Routes>
-          {/* <Footer/> */}
+
+
+    <Router>
+      <>
+      <Routes>
+          <Route 
+            path='/' 
+            element={ user? <Home /> :<Register/>} 
+          />
+          <Route 
+            path='/login' 
+            element={ user? <Navigate replace to ="/"/> :<Login />} 
+          />
+          <Route 
+            path='/register' 
+            element={ user? <Navigate replace to ="/"/> :<Register />} 
+          />
+          <Route 
+            path='/profile/:username' 
+            element={<Profile />} 
+          />
+          <Route 
+            path='*'
+            element={<h1 className='display-2'>Wrong page!</h1>}
+          />
+        </Routes>
         </>
-      </Router>
-   
+     </Router>
   );
 }
-
-export default App;
