@@ -7,12 +7,12 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const multer = require("multer");
 const router = express.Router();
+const path = require("path");
 
 // Route imports 
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
-const path = require("path");
 
 
 // config to get .env 
@@ -26,7 +26,8 @@ mongoose.connect(
     console.log("Connected to MongoDB");
   }
 );
-//to server static files
+
+//to serve static files
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //Middlewares
@@ -45,12 +46,12 @@ const storage = multer.diskStorage({
 });
 
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   try {
     return res.status(200).json("File uploded successfully");
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 });
 // app.get('/',(req,res)=>{
