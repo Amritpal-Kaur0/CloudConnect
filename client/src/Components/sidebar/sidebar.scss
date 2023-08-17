@@ -1,0 +1,56 @@
+.sidebar {
+  flex: 3;
+  height: calc(100vh - 50px);
+  box-shadow: inset 1px 10px 20px -1px rgba(0,0,0,0.37);
+  margin: 5px;
+  border-radius: 15px;
+  background-color: rgb(252, 252, 252);
+  overflow: scroll;
+  position: sticky;
+  top: 50px;
+
+::-webkit-scrollbar{
+width: 5px;
+height: 6px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: rgb(244, 237, 228);
+
+  }
+  ::-webkit-scrollbar-thumb{
+  background-color: rgb(179, 178, 178);
+  }
+  .sidebarwrap {
+    // margin-top: 20px;
+    padding: 20px;
+
+    .list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      .listItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .listIcon {
+          margin-right: 15px;
+        }
+
+        .listItemtext {
+        }
+      }
+    }
+    hr {
+      margin: 20px 0;
+    }
+    .friendlist {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+     
+    }
+  }
+}
