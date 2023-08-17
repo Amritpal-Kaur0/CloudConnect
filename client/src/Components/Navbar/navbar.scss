@@ -4,6 +4,7 @@
     background: #7b7573;
     z-index:50;
     padding: 10px;
+    animation: slideleft 4s ease forwards;
   
     //  left side
     .navbarLeft {
@@ -11,12 +12,35 @@
       .logo {
         color:#f7dada;
         cursor: pointer;
+        animation: zoomIn 4s ease forwards;
         text-shadow: 3px 2px #14105c;
         span{
-          color:#e0b4b4;
+          color:#ef5abb;
         }
       }
     }
+    /* Animation  */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity:1;
+  }
+}
+@keyframes slideleft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
   
     //   center
     .navbarCenter {
@@ -48,10 +72,19 @@
   font-size: 14px;
   border: 1px solid #2B2A4C;
   border-radius: 5px;
-  padding: 5px;
+  font-weight: 500;
+  padding: 5px 10px;
   box-shadow: 2px 2px #4440b7;
   cursor: pointer;
       }
+      .navbarLink:hover{
+        color: #3a3837;
+        background-color: rgb(236, 200, 200);
+        font-weight: 500;
+        padding: 6px 10px;
+        box-shadow: 4px 4px #4440b7;
+        cursor: pointer;
+            }
      }
      .navbarIcons{
      
