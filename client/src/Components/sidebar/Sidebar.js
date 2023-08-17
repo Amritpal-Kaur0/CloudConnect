@@ -1,7 +1,9 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './sidebar.scss'
-import Friend from '../Friend/Friend';
-import {Users} from '../../dummyData'
+// import Friend from '../Friend/Friend';
+// import {Users} from '../../dummyData'
+import { Link } from 'react-router-dom';
+import { AuthContext } from "../../context/authContext";
 
 
 // material -ui imports 
@@ -14,13 +16,18 @@ import BedroomParentIcon from '@mui/icons-material/BedroomParent';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 
 export default function Sidebar() {
+  const { user } = useContext(AuthContext);
   return (
+    <>
     <div className='sidebar'>
      <div className="sidebarwrap">
     <ul className="list">
       <li className="listItem">
+
       <RssFeedIcon className='listIcon'/>
+    <Link to="/">
       <span className="listItemtext">Feed</span>
+      </Link>
       </li>
       <li className="listItem">
       <ChatBubbleOutlineIcon className='listIcon'/>
@@ -47,16 +54,18 @@ export default function Sidebar() {
       <span className="listItemtext">Questions?</span>
       </li>
     </ul>
-   <hr />
-   <ul className="friendlist">
-{Users.map(u=>
+     {/* <hr /> */}
+   {/* <ul className="friendlist">
+{Users.map((u)=>
     <Friend  key={u.id} user={u}/>
   )}
    
  
-   </ul>
-     </div>
-
-    </div>
-  )
-}
+   </ul> */}
+   </div>
+ 
+  </div>
+  </>
+   );
+ }
+  

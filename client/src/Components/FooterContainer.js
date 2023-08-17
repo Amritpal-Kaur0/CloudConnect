@@ -2,8 +2,8 @@ import React from "react";
 import { styled } from "@mui/material";
 
 const FooterContainer = styled("footer")`
-  background-color: #EA906C;
-  color: #2B2A4C;
+  background-color: #7b7573;
+  color: white;
   padding: 10px;
   text-align: center;
 `;
