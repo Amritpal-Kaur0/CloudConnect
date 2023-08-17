@@ -1,0 +1,108 @@
+.register {
+  height: 100vh;
+  // background: url("../../img/cloudsbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: beige;
+    width: 60%;
+    border-radius: 15px;
+    border: 1px solid rgb(36, 34, 34);
+    box-shadow: 10px 10px rgba(32, 30, 30, 0.699);
+    // min-height: 400px;
+    overflow: hidden;
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgb(225, 98, 19), rgb(144, 159, 203));
+      padding: 3rem;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: white;
+
+      h1 {
+        font-size: 4rem;
+        line-height:3.5rem;
+        text-shadow: 4px 4px grey;
+      }
+      p {
+      }
+      span {
+        font-size: 14px;
+      }
+      button {
+        width: 50%;
+        padding: 12px;
+        background-color: chocolate;
+        color: rgb(248, 248, 248);
+        cursor: pointer;
+        border: none;
+        font-weight: bold;
+      }
+    }
+    .right {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      //  background-color: rgba(218, 132, 57, 0.313);
+      background: linear-gradient(rgb(225, 98, 19), rgb(144, 159, 203));
+
+      justify-content: center;
+      h1 {
+        color: rgb(33, 31, 31);
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 4px grey;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        input {
+          border: none;
+          border-top: 2px solid grey;
+          padding: 10px 20px;
+          width: 100%;
+        }
+        button {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          color: white;
+          background-color: chocolate;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @media (max-width: 920px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .left {
+      flex-direction: column;
+      h1 {
+        font-size: 1rem;
+      }
+      span {
+        font-size: 1rem;
+        line-height: 0.5rem;
+      }
+    
+  }
+}
+
+}
