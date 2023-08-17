@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import Footer from "../../Components/FooterContainer";
-import Navbar from "../../Components/Navbar/Navbar";
-import Newsfeed from "../../Components/Newsfeed/Newsfeed";
-import Rightbar from "../../Components/Rightbar/Rightbar";
-import Sidebar from "../../Components/sidebar/Sidebar";
+import Footer from "../Components/FooterContainer";
+import Navbar from "../Components/Navbar/Navbar";
+import Newsfeed from "../Components/Newsfeed/Newsfeed";
+import Rightbar from "../Components/Rightbar/Rightbar";
+import Sidebar from "../Components/sidebar/Sidebar";
 import "./profile.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";

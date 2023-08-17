@@ -11,7 +11,7 @@ import { AuthContext } from "./context/authContext";
 
 import Home from "./pages/home/Home";
 import "./App.css";
-import Profile from "./pages/profile/Profile.jsx";
+import Profile from "./pages/Profile.jsx";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 // import { Switch } from "@mui/material";
