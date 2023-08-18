@@ -27,7 +27,8 @@
 
 
 ## Preview Images
-![Untitled Diagram drawio](https://github.com/Amritpal-Kaur0/CloudConnect/assets/128442182/b65f6c4b-8345-43d7-a870-0a0c8931057a)
+
+![Untitled Diagram drawio](https://github.com/Amritpal-Kaur0/CloudConnect/assets/128442182/10be1057-2e51-4071-823f-28ebc3bfe9dc)
 
 ## Technologies Used
  
